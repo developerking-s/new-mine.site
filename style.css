@@ -1,0 +1,112 @@
+/* Reset */
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Corpo */
+body {
+    background: url('https://wallpapercave.com/wp/wp4040456.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Menu */
+header .menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header .menu a {
+    color: #00ffcc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+header .menu a:hover {
+    color: #99ff99;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #99ff99;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #00ffcc;
+}
+
+/* Seção de Benefícios */
+#beneficios {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#beneficios h2 {
+    font-size: 2.5rem;
+    color: #99ff99;
+}
+
+.benefit {
+    margin: 20px 0;
+    animation: slideUp 1s ease;
+}
+
+.benefit h3 {
+    color: #00ffcc;
+}
+
+.benefit p {
+    color: #ffffff;
+}
+
+/* Suporte */
+#suporte {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#suporte h2 {
+    font-size: 2.5rem;
+    color: #99ff99;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ffcc;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
