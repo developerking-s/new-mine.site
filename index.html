@@ -1,0 +1,961 @@
+<meta property="og:title" content="NewMine Site">
+    <meta property="og:description" content="Veja mais sobre o newsite um servidor de minecraft feito com 🤍 amor claro que br">
+    <meta property="og:image"">
+    <meta name="theme-color" content="#3398ff" 
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Era Minecraft - Servidor Exclusivo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>
+    :root {
+      --preto: #1a1a1a;
+      --rosa: #ff6ec7;
+      --verde: #8affb9;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      background-color: var(--preto);
+      color: white;
+      overflow-x: hidden;
+    }
+    
+    /* Animação de partículas de fundo */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .particle {
+      position: absolute;
+      background-color: var(--rosa);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 20s infinite ease-in-out;
+    }
+    
+    .particle:nth-child(odd) {
+      background-color: var(--verde);
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateY(-20px) translateX(15px);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+      }
+    }
+    
+    /* Cabeçalho */
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px 0;
+      border-bottom: 3px solid var(--rosa);
+      position: relative;
+    }
+    
+    .header-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo h1 {
+      color: var(--verde);
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px var(--rosa);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        text-shadow: 0 0 10px var(--rosa);
+      }
+      50% {
+        text-shadow: 0 0 20px var(--rosa), 0 0 30px var(--verde);
+      }
+      100% {
+        text-shadow: 0 0 10px var(--rosa);
+      }
+    }
+    
+    .logo span {
+      color: var(--rosa);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 25px;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      position: relative;
+      transition: color 0.3s;
+    }
+    
+    nav ul li a:hover {
+      color: var(--rosa);
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--verde);
+      transition: width 0.3s;
+    }
+    
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+    
+    /* Seção hero */
+    .hero {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      text-align: center;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--verde);
+      text-shadow: 0 0 10px var(--preto);
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: white;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .btn {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .btn-primary {
+      background-color: var(--rosa);
+      color: white;
+    }
+    
+    .btn-secondary {
+      background-color: var(--verde);
+      color: var(--preto);
+    }
+    
+    .btn i {
+      margin-right: 10px;
+    }
+    
+    /* Seção características */
+    .features {
+      padding: 80px 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--verde);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--rosa);
+    }
+    
+    .features-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .feature-card {
+      background-color: rgba(26, 26, 26, 0.8);
+      border-radius: 10px;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+      border-bottom: 3px solid var(--rosa);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--verde);
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--rosa);
+    }
+    
+    .feature-card p {
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    
+    /* Seção mods */
+    .mods {
+      padding: 80px 0;
+    }
+    
+    .mods-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .mod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .mod-card {
+      background-color: rgba(26, 26, 26, 0.8);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    
+    .mod-card:hover {
+      transform: scale(1.05);
+    }
+    
+    .mod-img {
+      height: 150px;
+      background-color: #2a2a2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .mod-img i {
+      font-size: 3rem;
+      color: var(--verde);
+    }
+    
+    .mod-info {
+      padding: 20px;
+    }
+    
+    .mod-info h3 {
+      font-size: 1.3rem;
+      color: var(--rosa);
+      margin-bottom: 10px;
+    }
+    
+    .mod-info p {
+      color: #e0e0e0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    
+    .mod-tag {
+      display: inline-block;
+      background-color: var(--verde);
+      color: var(--preto);
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+    
+    /* Seção Como Jogar */
+    .how-to-play {
+      padding: 80px 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .steps-container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .step {
+      display: flex;
+      margin-bottom: 60px;
+      align-items: center;
+    }
+    
+    .step:last-child {
+      margin-bottom: 0;
+    }
+    
+    .step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    .step-number {
+      flex: 0 0 100px;
+      height: 100px;
+      background-color: var(--rosa);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .step-content {
+      flex: 1;
+      padding: 0 30px;
+    }
+    
+    .step-content h3 {
+      font-size: 1.8rem;
+      color: var(--verde);
+      margin-bottom: 15px;
+    }
+    
+    .step-content p {
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    
+    /* Contato */
+    .contact {
+      padding: 80px 0;
+    }
+    
+    .contact-container {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .contact-info h3 {
+      font-size: 1.8rem;
+      color: var(--verde);
+      margin-bottom: 20px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: var(--rosa);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-right: 15px;
+    }
+    
+    .contact-text p {
+      color: #e0e0e0;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background-color: var(--verde);
+      color: var(--preto);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: transform 0.3s, background-color 0.3s;
+      text-decoration: none;
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px);
+      background-color: var(--rosa);
+      color: white;
+    }
+    
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .contact-form h3 {
+      font-size: 1.8rem;
+      color: var(--verde);
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--verde);
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    
+    .form-control:focus {
+      border-color: var(--rosa);
+      outline: none;
+      box-shadow: 0 0 10px rgba(255, 110, 199, 0.3);
+    }
+    
+    textarea.form-control {
+      resize: vertical;
+      min-height: 150px;
+    }
+    
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--rosa);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .btn-submit:hover {
+      background-color: var(--verde);
+      color: var(--preto);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 40px 0 20px;
+      border-top: 3px solid var(--verde);
+    }
+    
+    .footer-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .footer-logo {
+      font-size: 1.8rem;
+      color: var(--verde);
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+    
+    .footer-logo span {
+      color: var(--rosa);
+    }
+    
+    .footer-text {
+      color: #b0b0b0;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .footer-title {
+      font-size: 1.2rem;
+      color: var(--verde);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--rosa);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #b0b0b0;
+      text-decoration: none;
+      transition: color 0.3s;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .footer-links a:hover {
+      color: var(--rosa);
+    }
+    
+    .footer-links a i {
+      margin-right: 10px;
+      font-size: 0.8rem;
+    }
+    
+    .server-status {
+      background-color: rgba(26, 26, 26, 0.8);
+      border-radius: 5px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      color: #b0b0b0;
+    }
+    
+    .status-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .status-online {
+      color: var(--verde);
+      font-weight: bold;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 40px;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .logo {
+        margin-bottom: 20px;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav ul li {
+        margin-left: 0;
+      }
+      
+      .mobile-menu-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      nav.active {
+        display: block;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+      }
+      
+      .step {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .step:nth-child(even) {
+        flex-direction: column;
+      }
+      
+      .step-number {
+        margin-bottom: 20px;
+      }
+      
+      .copyright {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Animação de partículas de fundo -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Cabeçalho -->
+  <header>
+    <div class="header-container">
+      <div class="logo animate__animated animate__fadeInDown">
+        <h1>Nova <span>Era</span></h1>
+      </div>
+      
+      <div class="mobile-menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      
+      <nav class="animate__animated animate__fadeInDown">
+        <ul>
+          <li><a href="#home"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="#features"><i class="fas fa-star"></i> Características</a></li>
+          <li><a href="#mods"><i class="fas fa-puzzle-piece"></i> Mods</a></li>
+          <li><a href="#how-to-play"><i class="fas fa-gamepad"></i> Como Jogar</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Seção Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content animate__animated animate__fadeIn">
+      <h2 class="animate__animated animate__pulse animate__infinite">Bem-vindo ao <span>Nova Era</span></h2>
+      <p>Um servidor Minecraft exclusivo com incríveis recursos, comunidade ativa e mundo imersivo</p>
+      <div class="hero-buttons">
+        <a href="#how-to-play" class="btn btn-primary animate__animated animate__bounceIn animate__delay-1s">
+          <i class="fas fa-play"></i> Comece a Jogar
+        </a>
+        <a href="#" class="btn btn-secondary animate__animated animate__bounceIn animate__delay-1s">
+          <i class="fas fa-server"></i> Copiar IP
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Características -->
+  <section class="features" id="features">
+    <div class="section-title animate__animated animate__fadeIn">
+      <h2>Características Exclusivas</h2>
+    </div>
+    
+    <div class="features-container">
+      <div class="feature-card animate__animated animate__fadeInUp">
+        <div class="feature-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Economia Dinâmica</h3>
+        <p>Sistema econômico baseado em jogadores, com empregos, lojas e um mercado em constante evolução.</p>
+      </div>
+      
+      <div class="feature-card animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Proteção de Terrenos</h3>
+        <p>Proteja suas construções com nosso sistema avançado de claim, evitando griefing e roubo.</p>
+      </div>
+      
+      <div class="feature-card animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="feature-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Sistema de Clãs</h3>
+        <p>Forme alianças, conquiste territórios e participe de eventos exclusivos com seu clã.</p>
+      </div>
+      
+      <div class="feature-card animate__animated animate__fadeInUp">
+        <div class="feature-icon">
+          <i class="fas fa-gem"></i>
+        </div>
+        <h3>Itens Customizados</h3>
+        <p>Descubra armas, armaduras e ferramentas únicas com poderes especiais e encantamentos exclusivos.</p>
+      </div>
+      
+      <div class="feature-card animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="feature-icon">
+          <i class="fas fa-dragon"></i>
+        </div>
+        <h3>Mobs Especiais</h3>
+        <p>Enfrente criaturas únicas com drops raros e desafios empolgantes para testar suas habilidades.</p>
+      </div>
+      
+      <div class="feature-card animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="feature-icon">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <h3>Eventos Semanais</h3>
+        <p>Participe de eventos especiais com recompensas exclusivas e divertimento garantido para toda a comunidade.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Mods -->
+  <section class="mods" id="mods">
+    <div class="section-title animate__animated animate__fadeIn">
+      <h2>Nossos Mods</h2>
+    </div>
+    
+    <div class="mods-container">
+      <div class="mod-grid">
+        <div class="mod-card animate__animated animate__fadeInUp">
+          <div class="mod-img">
+            <i class="fas fa-magic"></i>
+          </div>
+          <div class="mod-info">
+            <h3>Thaumcraft</h3>
+            <p>Explore a magia arcana e desventre mistérios antigos com esse mod de magia completo.</p>
+            <span class="mod-tag">Magia</span>
+          </div>
+        </div>
+        
+        <div class="mod-card animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="mod-img">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="mod-info">
+            <h3>IndustrialCraft 2</h3>
+            <p>Avance tecnologicamente com máquinas, geradores e novos recursos de energia.</p>
+            <span class="mod-tag">Tecnologia</span>
+          </div>
+        </div>
+        
+        <div class="mod-card animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="mod-img">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div class="mod-info">
+            <h3>Galacticraft</h3>
+            <p>Construa foguetes e explore planetas em uma jornada espacial incrível.</p>
+            <span class="mod-tag">Exploração</span>
+          </div>
+        </div>
+        
+        <div class="mod-card animate__animated animate__fadeInUp">
+          <div class="mod-img">
+            <i class="fas fa-ghost"></i>
+          </div>
+          <div class="mod-info">
+            <h3>Twilight Forest</h3>
+            <p>Aventure-se em uma dimensão mágica cheia de criaturas, ruínas e tesouros.</p>
+            <span class="mod-tag">Aventura</span>
+          </div>
+        </div>
+        
+        <div class="mod-card animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="mod-img">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <div class="mod-info">
+            <h3>Pam's HarvestCraft</h3>
+            <p>Amplie sua experiência culinária com centenas de novos alimentos e receitas.</p>
+            <span class="mod-tag">Agricultura</span>
+          </div>
+        </div>
+        
+        <div class="mod-card animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="mod-img">
+            <i class="fas fa-hat-wizard"></i>
+          </div>
+          <div class="mod-info">
+            <h3>Blood Magic</h3>
+            <p>Domine a arte da magia de sangue e faça sacrifícios para obter poder.</p>
+            <span class="mod-tag">Magia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Como Jogar -->
+  <section class="how-to-play" id="how-to-play">
+    <div class="section-title animate__animated animate__fadeIn">
+      <h2>Como Começar a Jogar</h2>
+    </div>
+    
+    <div class="steps-container">
+      <div class="step animate__animated animate__fadeInLeft">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Instale o Minecraft</h3>
+          <p>Adquira o Minecraft Java Edition oficial e instale-o em seu computador. Nosso servidor é compatível com a versão 1.12.2.</p>
+        </div>
+      </div>
+      
+      <div class="step animate__animated animate__fadeInRight">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Baixe o Modpack</h3>
+          <p>Baixe e instale nosso modpack exclusivo através do Technic Launcher ou CurseForge. Isso garantirá que você tenha todos os mods necessários.</p>
+        </div>
+      </div>
+      
+      <div class="step animate__animated animate__fadeInLeft">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Conecte-se ao Servidor</h3>
+          <p>Inicie o jogo e adicione nosso servidor à sua lista. Use o endereço <strong>play.novaera-mc.com</strong> para se conectar.</p>
+        </div>
+      </div>
+      
+      <div class="step animate__animated animate__fadeInRight">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Explore e Divirta-se!</h3>
+          <p>Após entrar, você será recebido por nossa equipe. Siga o tutorial inicial para aprender as mecânicas exclusivas e comece sua aventura na Nova Era!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contato -->
+  <section class="contact" id="contact">
+    <div class="section-title animate__animated animate__fadeIn">
+      <h2>Entre em Contato</h2>
+    </div>
+    
+    <div class="contact-container">
+      <div class="contact-info animate__animated animate__fadeInLeft">
+        <h3>Informações</h3>
+        
+        <div class="contact-item">
